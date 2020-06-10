@@ -1,0 +1,3 @@
+
+
+let GITHUB_PAT = security find-generic-password -ga GitHub_Acct_PAT
