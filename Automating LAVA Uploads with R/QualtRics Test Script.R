@@ -22,7 +22,7 @@ tests <- qualtRics::all_surveys() %>%
 # List approach
 data <- tests %>%
   pull(id) %>%
-  map(~ qualtRics::fetch_survey(., force_request = T, label = F, convert = F)) %>% # this set up is equivalent to exporting from Qualtrics as numeric. Remove `label` and `convert` arguments to be equivalent to Choice Text output
+  map(~ qualtRics::fetch_survey(., force_request = T, label = F, convert = F)) %>% # this set up is equivalent to exporting from Qualtrics as numeric. Remove `label` and `convert` arguments (or change both to TRUE) to be equivalent to Choice Text output
   setNames(pull(tests,name))
 data %>%
   pluck("PPG UDS Telephone Follow Up") %>%
